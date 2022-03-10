@@ -6,6 +6,13 @@ body {
   font-size: 10px;
   color: #03110e;
 }
+a,
+button,
+.btn {
+  font-family: "Josefin Sans", "Arial", "sans-serif";
+  transition: all 200ms ease-in-out;
+  transition-property: color, background-color;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -15,7 +22,7 @@ button {
   cursor: pointer;
   background: none;
   border: none;
-  transition: color 200ms ease-in-out;
+  padding: 0;
 }
 button:hover {
   color: #7b61ff;
@@ -31,7 +38,47 @@ button:hover {
 .btn.--sm {
   font-size: 1.1rem;
 }
+.btn.--solid {
+  color: #fff;
+  background: #03110e;
+  border: 1px solid #03110e;
+  padding: 14px 32px 12px;
+}
+.btn.--solid:hover {
+  color: #03110e;
+  background: #fff;
+}
+.btn.--outline {
+  color: #03110e;
+  background: #fff;
+  border: 1px solid #03110e;
+  padding: 14px 32px 12px;
+}
+.btn.--outline:hover {
+  color: #fff;
+  background: #03110e;
+}
+.btn.--circle {
+  position: relative;
+  border-radius: 50%;
+  color: #fff;
+  background: #03110e;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn.--circle .title {
+  margin-bottom: 3px;
+}
+.btn.--circle .desc {
+  font-size: 1.1rem;
+  opacity: 0.4;
+}
 .--nav-link {
+  list-style: none;
   font-weight: 700;
   font-size: 1.2rem;
   line-height: 1.6rem;

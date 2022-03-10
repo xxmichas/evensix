@@ -18,7 +18,7 @@ const Styleguide: NextPage = () => {
       </p>
       <button className="btn">Button</button>
       <button className="btn --sm">Button Small</button>
-      <button className="btn">Button Solid</button>
+      <button className="btn --solid">Button Solid</button>
       <button className="btn --outline">Button Outline</button>
       <button className="btn --circle">
         <span className="title">Button</span>
@@ -26,9 +26,9 @@ const Styleguide: NextPage = () => {
       </button>
       <nav>
         <ul>
-          <li>Nav item 1</li>
-          <li>Nav item 2</li>
-          <li>Nav item 3</li>
+          <li className="--nav-link">Nav item 1</li>
+          <li className="--nav-link">Nav item 2</li>
+          <li className="--nav-link">Nav item 3</li>
         </ul>
       </nav>
     </div>
