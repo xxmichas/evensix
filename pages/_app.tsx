@@ -6,6 +6,7 @@ import Header from "../components/Header/Header";
 import Sidebar from "../components/Sidebar/Sidebar";
 import { SidebarProvider } from "../contexts/Global/Sidebar";
 import { INavLinks } from "../types/types";
+import Footer from "../components/Footer/Footer";
 
 const navLinks: INavLinks[] = [
   { name: "Commercial", link: "/commercial" },
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Sidebar navLinks={navLinks} />
       </SidebarProvider>
       <Component {...pageProps} />;
+      <Footer />
     </Fragment>
   );
 }

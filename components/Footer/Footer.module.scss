@@ -1,0 +1,61 @@
+.footer {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding: 65px 0;
+  gap: 25px 0;
+
+  @include desktop {
+    display: flex;
+    gap: 0;
+    padding: 90px 0;
+  }
+
+  &::before {
+    content: "";
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $font-primary;
+    z-index: -1;
+  }
+}
+
+.logo {
+  max-width: 150px;
+  margin-bottom: 25px;
+
+  @include desktop {
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+
+  path {
+    fill: $font-secondary;
+  }
+}
+
+.--footer-link {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: $font-secondary;
+  transition: color 200ms ease-in-out;
+
+  @include desktop {
+    display: flex;
+    align-items: center;
+    margin-left: 55px;
+  }
+}
+
+a.--footer-link {
+  &:hover {
+    color: $primary;
+  }
+}
