@@ -1,14 +1,18 @@
 .footer {
+  width: 100%;
+  max-width: $max-width;
+  margin: auto;
   position: relative;
   display: grid;
   justify-items: center;
-  padding: 65px 0;
+  padding: 65px 25px;
   gap: 25px 0;
+  background: $font-primary;
 
   @include desktop {
     display: flex;
     gap: 0;
-    padding: 90px 0;
+    padding: 90px 80px;
   }
 
   &::before {
@@ -25,12 +29,16 @@
 }
 
 .logo {
-  max-width: 150px;
   margin-bottom: 25px;
+  margin-right: -15px;
 
   @include desktop {
     margin-bottom: 0;
     margin-right: auto;
+  }
+
+  svg {
+    max-width: 150px;
   }
 
   path {

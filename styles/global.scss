@@ -10,11 +10,16 @@ body {
 body {
   width: 100%;
   margin: auto;
+  overflow-x: hidden;
+}
+
+main {
+  margin: auto;
   padding: 0 25px;
 
   @include desktop {
     padding: 0 50px;
-    max-width: 1920px;
+    max-width: $max-width;
   }
 }
 

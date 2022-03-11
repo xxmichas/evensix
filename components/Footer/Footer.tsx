@@ -1,15 +1,11 @@
 import Link from "next/link";
 import styles from "./Footer.module.scss";
-import Logo from "../../public/logo.svg";
+import Logo from "../Logo/Logo";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Link href="/">
-        <a className={styles.logo}>
-          <Logo width="145" height="33" />
-        </a>
-      </Link>
+      <Logo className={styles.logo} />
       <Link href="/privacy">
         <a className={styles["--footer-link"]}>Privacy Policy</a>
       </Link>

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
 export default function useMediaMatch(mediaQuery: string) {
-  const [isMatch, setIsMatch] = useState(false);
+  // with true as default state we make sure that the pages will be pre-rendered in desktop mode on the server
+  const [isMatch, setIsMatch] = useState(true);
 
   const matchTest = (event: MediaQueryListEvent) => {
     setIsMatch(event.matches);

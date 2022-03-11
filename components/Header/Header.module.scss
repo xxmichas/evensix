@@ -1,13 +1,84 @@
 .header {
-  width: 100%;
   height: 66px;
+  width: 100%;
+  margin: auto;
+  max-width: $max-width;
+  padding: 0 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #fff;
+
+  @include desktop {
+    position: relative;
+    background: $primary;
+    height: 120px;
+  }
+
+  &::before {
+    content: "";
+    display: none;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $primary;
+    z-index: -1;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
+
+.nav {
+  margin: auto;
+  height: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  height: 100%;
+  align-items: center;
+
+  @include desktop {
+    width: auto;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 0 50px;
+    grid-auto-flow: column;
+    text-align: center;
+  }
 }
 
 .logo {
-  max-width: 85px;
+  svg {
+    max-width: 85px;
+
+    @include desktop {
+      max-width: 150px;
+    }
+  }
+}
+
+.logo-wrapper {
+  @include desktop {
+    grid-column: 3 / 4;
+    padding: 0 35px;
+    height: 100%;
+    background: #fff;
+  }
+
+  a {
+    margin-right: -15px;
+    padding-top: 50px;
+    display: grid;
+    align-items: center;
+  }
 }
 
 .sidebar-toggle {

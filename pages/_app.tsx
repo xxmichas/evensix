@@ -22,10 +22,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Fragment>
       <SidebarProvider>
-        <Header />
-        <Sidebar navLinks={navLinks} />
+        <Header isDesktop={isDesktop} navLinks={navLinks} />
+        {isDesktop ? null : <Sidebar navLinks={navLinks} />}
       </SidebarProvider>
-      <Component {...pageProps} />
+      <main>
+        <Component {...pageProps} />
+      </main>
       {isDesktop ? "DESKTOP MODE" : "MOBILE MODE"}
       <Footer />
     </Fragment>

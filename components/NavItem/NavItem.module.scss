@@ -9,7 +9,16 @@
   padding: 15px 20px 13px;
   transition: color 200ms ease-in-out;
 
+  @include desktop {
+    padding: 0;
+    border: none;
+  }
+
   &:hover {
     color: $purple;
+
+    @include desktop {
+      color: $red;
+    }
   }
 }
