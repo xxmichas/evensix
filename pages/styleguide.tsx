@@ -24,13 +24,6 @@ const Styleguide: NextPage = () => {
         <span className="title">Button</span>
         <span className="desc">From £XX,XXX</span>
       </button>
-      <nav>
-        <ul>
-          <li className="--nav-link">Nav item 1</li>
-          <li className="--nav-link">Nav item 2</li>
-          <li className="--nav-link">Nav item 3</li>
-        </ul>
-      </nav>
     </div>
   );
 };
