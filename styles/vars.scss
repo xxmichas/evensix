@@ -1,0 +1,20 @@
+@mixin desktop {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+$font-primary: #03110e;
+$font-secondary: #fff;
+$primary: #c4ebf8;
+$red: #b11823;
+$brown: #b14f25;
+$purple: #7b61ff;
+
+@mixin font-primary {
+  font-family: "Josefin Sans", "Arial", "sans-serif";
+}
+
+@mixin font-secondary {
+  font-family: "Audrey", "Arial", "sans-serif";
+}

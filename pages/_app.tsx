@@ -1,9 +1,29 @@
-import "../styles/global.css";
+import "../styles/global.scss";
 import "../styles/fonts.css";
 import type { AppProps } from "next/app";
+import { Fragment } from "react";
+import Header from "../components/Header/Header";
+import Sidebar from "../components/Sidebar/Sidebar";
+import { SidebarProvider } from "../contexts/Global/Sidebar";
+import { INavLinks } from "../types/types";
+
+const navLinks: INavLinks[] = [
+  { name: "Commercial", link: "/commercial" },
+  { name: "Tourers", link: "/tourers" },
+  { name: "Our history", link: "/history" },
+  { name: "Get in touch", link: "/contact" },
+];
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Fragment>
+      <SidebarProvider>
+        <Header />
+        <Sidebar navLinks={navLinks} />
+      </SidebarProvider>
+      <Component {...pageProps} />;
+    </Fragment>
+  );
 }
 
 export default MyApp;

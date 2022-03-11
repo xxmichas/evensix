@@ -1,0 +1,15 @@
+.--nav-link {
+  list-style: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-bottom: 1px solid $font-primary;
+  padding: 15px 20px 13px;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: $purple;
+  }
+}
