@@ -5,6 +5,11 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import test from "./test";
+import landingPage from "./documents/landingPage";
+import hero from "./objects/hero";
+import button from "./objects/button";
+import heroItem from "./objects/heroItem";
+import navLink from "./objects/navLink";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -15,5 +20,10 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     test,
+    landingPage,
+    navLink,
+    hero,
+    heroItem,
+    button,
   ]),
 });

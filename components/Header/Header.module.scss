@@ -12,7 +12,7 @@
   @include desktop {
     position: relative;
     background: $primary;
-    height: 120px;
+    height: auto;
   }
 
   &::before {
@@ -50,8 +50,16 @@
     display: grid;
     grid-template-columns: repeat(5, max-content);
     gap: 0 50px;
-    grid-auto-flow: column;
     text-align: center;
+  }
+
+  li {
+    @include desktop {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
@@ -68,6 +76,8 @@
 .logo-wrapper {
   @include desktop {
     grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    order: 1;
     padding: 0 35px;
     height: 100%;
     background: #fff;
@@ -75,7 +85,7 @@
 
   a {
     margin-right: -15px;
-    padding-top: 50px;
+    padding-top: 15px;
     display: grid;
     align-items: center;
   }

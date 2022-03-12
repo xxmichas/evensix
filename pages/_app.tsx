@@ -16,7 +16,7 @@ const navLinks: INavLinks[] = [
   { name: "Get in touch", link: "/contact" },
 ];
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const isDesktop = useMediaMatch("(min-width: 900px)");
 
   return (
@@ -32,6 +32,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Footer />
     </Fragment>
   );
-}
+};
 
 export default MyApp;
