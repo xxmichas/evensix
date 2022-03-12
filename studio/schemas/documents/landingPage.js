@@ -2,6 +2,7 @@ export default {
   name: "landingPage",
   title: "Landing page",
   type: "document",
+  __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"],
   fields: [
     {
       name: "pageTitle",
