@@ -24,8 +24,7 @@ main {
 }
 
 a,
-button,
-.btn {
+button {
   @include font-primary;
   transition: all 200ms ease-in-out;
   transition-property: color, background-color;
@@ -50,61 +49,6 @@ button {
 
 * {
   box-sizing: border-box;
-}
-
-.btn {
-  font-weight: 600;
-  font-size: 1.3rem;
-  line-height: 1.6rem;
-
-  &.--sm {
-    font-size: 1.1rem;
-  }
-
-  &.--solid {
-    color: $font-secondary;
-    background: $font-primary;
-    border: 1px solid $font-primary;
-    padding: 14px 32px 12px;
-
-    &:hover {
-      color: $font-primary;
-      background: $font-secondary;
-    }
-  }
-
-  &.--outline {
-    color: $font-primary;
-    background: $font-secondary;
-    border: 1px solid $font-primary;
-    padding: 14px 32px 12px;
-
-    &:hover {
-      color: $font-secondary;
-      background: $font-primary;
-    }
-  }
-
-  &.--circle {
-    border-radius: 50%;
-    color: $font-secondary;
-    background: $font-primary;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .title {
-      margin-bottom: 3px;
-    }
-
-    .desc {
-      font-size: 1.1rem;
-      opacity: 0.4;
-    }
-  }
 }
 
 h1,

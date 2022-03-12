@@ -10,6 +10,8 @@ import hero from "./objects/hero";
 import button from "./objects/button";
 import heroItem from "./objects/heroItem";
 import navLink from "./objects/navLink";
+import card from "./objects/card";
+import contentSectionCards from "./objects/contentSectionCards";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -19,6 +21,8 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
+    card,
+    contentSectionCards,
     test,
     landingPage,
     navLink,

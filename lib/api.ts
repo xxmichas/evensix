@@ -1,5 +1,10 @@
 import client from "../sanity-client";
-import { INavLinks } from "../types/types";
+import { ILandingPageContent, INavLinks } from "../types/types";
+import imageUrlBuilder from "@sanity/image-url";
+
+const builder = imageUrlBuilder(client);
+
+export const getImageData = (source: string) => builder.image(source);
 
 // const hardcodedNavLinks: INavLinks[] = [
 //   { name: "Commercial", link: "/commercial" },
@@ -10,16 +15,20 @@ import { INavLinks } from "../types/types";
 
 export interface ILandingPageConfig {
   title: string;
-  navLinks: INavLinks[];
+  content: ILandingPageContent[];
 }
 
+export const getNavLinks = async (): Promise<INavLinks[]> => {
+  const data = (await client.fetch(`*[_id == "landingPageConfig"]{navBuilder[]{name, link}}`))[0];
+
+  return data.navBuilder ?? [];
+};
+
 export const getLandingPageConfig = async (): Promise<ILandingPageConfig> => {
-  const data = (
-    await client.fetch(`*[_id == "landingPageConfig"]{pageTitle, navBuilder[]{name, link}}`)
-  )[0];
+  const data = (await client.fetch(`*[_id == "landingPageConfig"]{pageTitle, pageBuilder}`))[0];
 
   return {
     title: data.pageTitle ?? "Page Title Can Be Edited In Sanity Studio",
-    navLinks: data.navBuilder ?? [],
+    content: data.pageBuilder ?? [],
   };
 };

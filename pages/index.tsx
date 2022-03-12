@@ -3,12 +3,17 @@ import Head from "next/head";
 import { Fragment } from "react";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import LandingPage from "../components/LandingPage/LandingPage";
 import Sidebar from "../components/Sidebar/Sidebar";
 import { SidebarProvider } from "../contexts/Global/Sidebar";
 import useMediaMatch from "../hooks/useMediaMatch";
-import { getLandingPageConfig, ILandingPageConfig } from "../lib/api";
+import { getLandingPageConfig, getNavLinks, ILandingPageConfig } from "../lib/api";
+import { INavLinks } from "../types/types";
 
-const Home = ({ title, navLinks }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({
+  config: { title, content },
+  navLinks,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const isDesktop = useMediaMatch("(min-width: 900px)");
 
   return (
@@ -21,8 +26,8 @@ const Home = ({ title, navLinks }: InferGetStaticPropsType<typeof getStaticProps
         <Header isDesktop={isDesktop} navLinks={navLinks} />
         {isDesktop ? null : <Sidebar navLinks={navLinks} />}
       </SidebarProvider>
-      <main>CARAVANS</main>
-      {isDesktop ? "DESKTOP MODE" : "MOBILE MODE"}
+      <LandingPage content={content} />
+      <span>{isDesktop ? "DESKTOP MODE" : "MOBILE MODE"}</span>
       <Footer />
     </Fragment>
   );
@@ -30,11 +35,17 @@ const Home = ({ title, navLinks }: InferGetStaticPropsType<typeof getStaticProps
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<ILandingPageConfig> = async () => {
-  const config = await getLandingPageConfig();
+export const getStaticProps: GetStaticProps<{
+  config: ILandingPageConfig;
+  navLinks: INavLinks[];
+}> = async () => {
+  const [navLinks, config] = await Promise.all([getNavLinks(), getLandingPageConfig()]);
 
   return {
-    props: config,
+    props: {
+      config,
+      navLinks,
+    },
     revalidate: 10,
   };
 };

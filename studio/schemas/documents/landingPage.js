@@ -18,7 +18,7 @@ export default {
       name: "pageBuilder",
       title: "Page sections",
       type: "array",
-      of: [{ type: "hero" }],
+      of: [{ type: "hero" }, { type: "contentSectionCards" }],
     },
   ],
 };

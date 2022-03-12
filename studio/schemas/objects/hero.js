@@ -7,16 +7,19 @@ export default {
       name: "heading",
       title: "Heading",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "tagline",
       title: "Tagline",
       type: "text",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "button",
       title: "Button",
       type: "button",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "images",
