@@ -19,6 +19,7 @@ const Home = ({
   return (
     <Fragment>
       <Head>
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1," />
         <title>{title}</title>
       </Head>
 

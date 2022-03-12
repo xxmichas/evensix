@@ -15,7 +15,7 @@
 }
 
 .badge {
-  display: none;
+  display: none !important;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,7 +24,7 @@
   transition: all 250ms ease-in-out;
 
   @include desktop {
-    display: flex;
+    display: flex !important;
   }
 
   &:hover {
