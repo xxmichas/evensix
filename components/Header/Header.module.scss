@@ -48,7 +48,7 @@
     width: auto;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(5, max-content);
+    grid-template-columns: repeat(5, minmax(auto, max-content));
     gap: 0 50px;
     text-align: center;
   }

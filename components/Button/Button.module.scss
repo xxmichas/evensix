@@ -26,26 +26,4 @@
       background: $font-primary;
     }
   }
-
-  // export it to badge component
-  &.--circle {
-    border-radius: 50%;
-    color: $font-secondary;
-    background: $font-primary;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .title {
-      margin-bottom: 3px;
-    }
-
-    .desc {
-      font-size: 1.1rem;
-      opacity: 0.4;
-    }
-  }
 }

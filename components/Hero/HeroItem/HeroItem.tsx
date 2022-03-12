@@ -2,6 +2,7 @@ import { IHeroItem, Iimage } from "../../../types/types";
 import Image from "next/image";
 import { getImageData } from "../../../lib/api";
 import styles from "./HeroItem.module.scss";
+import Badge from "../../Badge/Badge";
 
 const HeroItem = (item: IHeroItem) => {
   const imageData = getImageData(item.image as string);
@@ -15,6 +16,7 @@ const HeroItem = (item: IHeroItem) => {
         className={styles.image}
         priority={true}
       />
+      <Badge className={styles.badge} text={item.hoverText} description={item.hoverDescription} />
     </div>
   );
 };
