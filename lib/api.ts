@@ -1,5 +1,5 @@
 import client from "../sanity-client";
-import { ILandingPageContent, INavLinks } from "../types/types";
+import { LandingPageContent, INavLinks } from "../types/types";
 import imageUrlBuilder from "@sanity/image-url";
 
 const builder = imageUrlBuilder(client);
@@ -15,7 +15,8 @@ export const getImageData = (source: string) => builder.image(source);
 
 export interface ILandingPageConfig {
   title: string;
-  content: ILandingPageContent[];
+  themeColor: string;
+  content: LandingPageContent[];
 }
 
 export const getNavLinks = async (): Promise<INavLinks[]> => {
@@ -25,10 +26,13 @@ export const getNavLinks = async (): Promise<INavLinks[]> => {
 };
 
 export const getLandingPageConfig = async (): Promise<ILandingPageConfig> => {
-  const data = (await client.fetch(`*[_id == "landingPageConfig"]{pageTitle, pageBuilder}`))[0];
+  const data = (
+    await client.fetch(`*[_id == "landingPageConfig"]{pageTitle, themeColor, pageBuilder}`)
+  )[0];
 
   return {
     title: data.pageTitle ?? "Page Title Can Be Edited In Sanity Studio",
+    themeColor: data.themeColor ?? "#000000",
     content: data.pageBuilder ?? [],
   };
 };

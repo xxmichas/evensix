@@ -11,7 +11,7 @@ import { getLandingPageConfig, getNavLinks, ILandingPageConfig } from "../lib/ap
 import { INavLinks } from "../types/types";
 
 const Home = ({
-  config: { title, content },
+  config: { title, themeColor, content },
   navLinks,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const isDesktop = useMediaMatch("(min-width: 900px)");
@@ -20,6 +20,7 @@ const Home = ({
     <Fragment>
       <Head>
         <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1," />
+        <meta name="theme-color" content={themeColor} />
         <title>{title}</title>
       </Head>
 

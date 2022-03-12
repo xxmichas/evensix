@@ -12,6 +12,8 @@ import heroItem from "./objects/heroItem";
 import navLink from "./objects/navLink";
 import card from "./objects/card";
 import contentSectionCards from "./objects/contentSectionCards";
+import contentSectionText from "./objects/contentSectionText";
+import contentSectionImage from "./objects/contentSectionImage";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -23,6 +25,8 @@ export default createSchema({
     /* Your types here! */
     card,
     contentSectionCards,
+    contentSectionText,
+    contentSectionImage,
     test,
     landingPage,
     navLink,

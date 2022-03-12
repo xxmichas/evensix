@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import styles from "./Hero.module.scss";
 import HeroItem from "./HeroItem/HeroItem";
 
-const Hero = (heroContent: IHeroSection) => {
+const Hero = ({ order, heroContent }: { order: number; heroContent: IHeroSection }) => {
   const isDesktop = useMediaMatch("(min-width: 900px)");
 
   const carouselRef = useRef(null);
@@ -14,7 +14,7 @@ const Hero = (heroContent: IHeroSection) => {
     const carousel = carouselRef.current as unknown as HTMLDivElement;
     carousel.removeAttribute("style");
 
-    if (heroContent.images.length > 0 && isDesktop) {
+    if (heroContent.images.length > 1 && isDesktop) {
       let isDown = false;
       let startX: number;
       let scrollLeft: number;
@@ -61,7 +61,7 @@ const Hero = (heroContent: IHeroSection) => {
   }, [heroContent.images.length, isDesktop]);
 
   return (
-    <section className={styles.hero}>
+    <section style={{ order }} className={styles.hero}>
       <div className={styles.block}>
         <h1>{heroContent.heading}</h1>
         <p>{heroContent.tagline}</p>

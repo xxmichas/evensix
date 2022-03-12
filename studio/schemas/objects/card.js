@@ -21,11 +21,10 @@ export default {
       name: "backgroundColor",
       type: "string",
       description: "Color must be in HEX format",
-      validation: (Rule) => [
+      validation: (Rule) =>
         Rule.regex(/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{8}|[a-fA-F0-9]{3})$/, {
           name: "Incorrect format",
         }),
-      ],
     },
     {
       name: "image",
