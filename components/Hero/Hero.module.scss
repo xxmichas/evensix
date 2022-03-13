@@ -32,6 +32,13 @@
 .carouser-wrapper {
   position: relative;
 
+  @include desktop {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: auto;
+  }
+
   &::before {
     content: "";
     width: 100vw;
@@ -42,6 +49,12 @@
     transform: translateX(-50%);
     background: #fff;
     z-index: 0;
+  }
+
+  &::-webkit-scrollbar {
+    @include desktop {
+      display: none;
+    }
   }
 }
 
@@ -54,8 +67,9 @@
   scroll-behavior: smooth;
 
   @include desktop {
+    width: fit-content;
     overflow-x: visible;
-    margin: 0 -100px;
+    margin: 0;
     scroll-snap-type: none;
     scroll-behavior: auto;
     cursor: ew-resize;
@@ -74,6 +88,7 @@
     @include desktop {
       scroll-snap-align: none;
       width: 62.5% !important;
+      max-width: 750px !important;
       padding: 0 75px;
     }
   }

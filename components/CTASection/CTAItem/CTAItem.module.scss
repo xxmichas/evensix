@@ -6,10 +6,21 @@
   @include desktop {
     width: 100%;
     flex: 0 0 100%;
+    display: flex;
   }
 
   > span {
     position: unset !important;
+
+    @include desktop {
+      width: 100% !important;
+    }
+  }
+
+  img {
+    @include desktop {
+      object-position: left;
+    }
   }
 }
 
@@ -18,22 +29,43 @@
   width: 100% !important;
   position: relative !important;
   height: unset !important;
-
-  @include desktop {
-    max-height: 420px !important;
-  }
+  max-height: 420px !important;
 }
 
 .item {
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+
+  @include desktop {
+    overflow-x: hidden;
+    flex-direction: row;
+    width: 50vw;
+    align-items: center;
+  }
 
   &.left {
     flex-direction: column-reverse;
 
+    @include desktop {
+      flex-direction: row-reverse;
+      justify-self: flex-end;
+    }
+
     .wrapper {
       align-self: flex-end;
+
+      @include desktop {
+        align-self: auto;
+        justify-content: flex-end;
+      }
+
+      img {
+        @include desktop {
+          object-position: right;
+        }
+      }
     }
 
     .background {
@@ -43,8 +75,58 @@
       }
     }
 
+    h5 {
+      margin-bottom: 20px;
+
+      @include desktop {
+        margin-top: 25px;
+        margin-bottom: 70px;
+        margin-right: 8px;
+        text-align: end;
+      }
+    }
+
     .desc {
       flex-direction: column-reverse;
+
+      @include desktop {
+        flex-direction: column;
+      }
+
+      h4 {
+        @include desktop {
+          text-align: end;
+          margin-right: 45px;
+        }
+
+        svg {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  &:not(.left) {
+    h5 {
+      margin-top: 20px;
+
+      @include desktop {
+        margin-top: 25px;
+        margin-bottom: 70px;
+        margin-left: 15px;
+        text-align: start;
+      }
+    }
+
+    h4 {
+      @include desktop {
+        text-align: start;
+        margin-left: 50px;
+      }
+
+      svg {
+        margin-left: 15px;
+      }
     }
   }
 }
@@ -59,6 +141,7 @@
   z-index: -1;
 
   @include desktop {
+    width: 50vw;
     left: 0;
     transform: none;
   }
@@ -68,4 +151,22 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+
+  @include desktop {
+    flex: 0 0 300px;
+    margin: min(12vw, 200px) 0 min(12vw, 300px);
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h4 {
+    svg {
+      display: inline;
+      vertical-align: text-top;
+    }
+  }
 }

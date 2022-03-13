@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getImageData } from "../../../lib/api";
 import { ICTAItem, Iimage } from "../../../types/types";
 import styles from "./CTAItem.module.scss";
+import { GoChevronRight, GoChevronLeft } from "react-icons/go";
 
 const CTAItem = ({
   textColor,
@@ -20,7 +21,11 @@ const CTAItem = ({
         <h5>{text}</h5>
         <Link href={link ?? "/"}>
           <a>
-            <h4>{linkText}</h4>
+            <h4>
+              {pos === "left" ? <GoChevronLeft /> : null}
+              {linkText}
+              {pos === "right" ? <GoChevronRight /> : null}
+            </h4>
           </a>
         </Link>
       </div>

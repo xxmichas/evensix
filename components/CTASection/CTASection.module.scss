@@ -1,8 +1,11 @@
 .cta {
   display: flex;
   flex-direction: column;
+  margin: 0 -25px;
 
   @include desktop {
-    flex-direction: row;
+    margin: 0 -50px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
