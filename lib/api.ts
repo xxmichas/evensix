@@ -22,7 +22,7 @@ export interface ILandingPageConfig {
 export const getNavLinks = async (): Promise<INavLinks[]> => {
   const data = (await client.fetch(`*[_id == "landingPageConfig"]{navBuilder[]{name, link}}`))[0];
 
-  return data.navBuilder ?? [];
+  return data?.navBuilder ?? [];
 };
 
 export const getLandingPageConfig = async (): Promise<ILandingPageConfig> => {
@@ -31,8 +31,8 @@ export const getLandingPageConfig = async (): Promise<ILandingPageConfig> => {
   )[0];
 
   return {
-    title: data.pageTitle ?? "Page Title Can Be Edited In Sanity Studio",
-    themeColor: data.themeColor ?? "#000000",
-    content: data.pageBuilder ?? [],
+    title: data?.pageTitle ?? "Page Title Can Be Edited In Sanity Studio",
+    themeColor: data?.themeColor ?? "#000000",
+    content: data?.pageBuilder ?? [],
   };
 };
