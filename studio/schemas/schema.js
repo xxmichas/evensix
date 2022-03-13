@@ -4,7 +4,6 @@ import createSchema from "part:@sanity/base/schema-creator";
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
-import test from "./test";
 import landingPage from "./documents/landingPage";
 import hero from "./objects/hero";
 import button from "./objects/button";
@@ -27,7 +26,6 @@ export default createSchema({
     contentSectionCards,
     contentSectionText,
     contentSectionImage,
-    test,
     landingPage,
     navLink,
     hero,

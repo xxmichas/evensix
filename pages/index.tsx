@@ -29,7 +29,6 @@ const Home = ({
         {isDesktop ? null : <Sidebar navLinks={navLinks} />}
       </SidebarProvider>
       <LandingPage content={content} />
-      <span>{isDesktop ? "DESKTOP MODE" : "MOBILE MODE"}</span>
       <Footer />
     </Fragment>
   );

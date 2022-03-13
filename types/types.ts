@@ -48,9 +48,10 @@ export interface IContentSectionImage extends IContentSection {
   image: Iimage;
 }
 
-interface ICard {
+export interface ICard {
   backgroundColor: string;
   button: IButton;
   heading: string;
-  image: Iimage;
+  description: string;
+  image: Iimage | string;
 }

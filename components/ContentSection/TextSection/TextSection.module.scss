@@ -1,0 +1,26 @@
+.section {
+  margin-bottom: 80px;
+
+  @include desktop {
+    padding: 0 10%;
+  }
+
+  label {
+    @include desktop {
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+.texts {
+  display: grid;
+
+  @include desktop {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 50px;
+  }
+
+  > *:only-child {
+    grid-column: 1 / 3;
+  }
+}

@@ -4,6 +4,10 @@
   line-height: 1.6rem;
   display: inline-block;
 
+  &:hover {
+    color: $purple;
+  }
+
   &.--solid {
     color: $font-secondary;
     background: $font-primary;
@@ -12,7 +16,7 @@
 
     &:hover {
       color: $font-primary;
-      background: $font-secondary;
+      background: none;
     }
   }
 
