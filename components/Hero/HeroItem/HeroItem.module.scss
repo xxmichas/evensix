@@ -12,6 +12,10 @@
 
   > span {
     position: unset !important;
+
+    img {
+      pointer-events: none;
+    }
   }
 }
 
