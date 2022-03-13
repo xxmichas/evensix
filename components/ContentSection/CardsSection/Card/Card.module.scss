@@ -23,7 +23,7 @@
 
     &::before {
       content: "";
-      width: 100%;
+      width: calc(100% + 2px);
       height: 45%;
       position: absolute;
       top: 0;

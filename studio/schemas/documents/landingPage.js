@@ -32,6 +32,7 @@ export default {
         { type: "contentSectionCards" },
         { type: "contentSectionText" },
         { type: "contentSectionImage" },
+        { type: "CTASection" },
       ],
     },
   ],

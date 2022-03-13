@@ -17,10 +17,12 @@ export default {
     {
       name: "hoverText",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "hoverDescription",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
   ],
 };

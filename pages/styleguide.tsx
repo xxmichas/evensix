@@ -1,4 +1,6 @@
 import { NextPage, GetStaticProps } from "next";
+import Badge from "../components/Badge/Badge";
+import Button from "../components/Button/Button";
 
 const Styleguide: NextPage = () => {
   return (
@@ -16,14 +18,10 @@ const Styleguide: NextPage = () => {
         nostrum dolore obcaecati? Facilis nisi deleniti nemo minus veritatis excepturi neque quia
         fuga rem suscipit? Quaerat?
       </p>
-      <button className="btn">Button</button>
-      <button className="btn --sm">Button Small</button>
-      <button className="btn --solid">Button Solid</button>
-      <button className="btn --outline">Button Outline</button>
-      <button className="btn --circle">
-        <span className="title">Button</span>
-        <span className="desc">From £XX,XXX</span>
-      </button>
+      <Button text="Button" link="/" type="basic" />
+      <Button text="Button Solid" link="/" type="solid" />
+      <Button text="Button Outline" link="/" type="outline" />
+      <Badge text="Badge" description="From £XX,XXX" />
     </div>
   );
 };

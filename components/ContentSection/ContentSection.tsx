@@ -1,5 +1,11 @@
-import { IContentSection, IContentSectionCards, IContentSectionText } from "../../types/types";
+import {
+  IContentSection,
+  IContentSectionCards,
+  IContentSectionImage,
+  IContentSectionText,
+} from "../../types/types";
 import CardsSection from "./CardsSection/CardsSection";
+import ImageSection from "./ImageSection/ImageSection";
 import TextSection from "./TextSection/TextSection";
 
 const ContentSection = ({ order, item }: { order: number; item: IContentSection }) => {
@@ -11,6 +17,10 @@ const ContentSection = ({ order, item }: { order: number; item: IContentSection 
 
     case "contentSectionCards":
       section = <CardsSection {...(item as IContentSectionCards)} />;
+      break;
+
+    case "contentSectionImage":
+      section = <ImageSection {...(item as IContentSectionImage)} />;
       break;
   }
   return <section style={{ order }}>{section}</section>;

@@ -45,7 +45,7 @@ export interface IContentSectionText extends IContentSection {
 }
 
 export interface IContentSectionImage extends IContentSection {
-  image: Iimage;
+  image: Iimage | string;
 }
 
 export interface ICard {
@@ -54,4 +54,18 @@ export interface ICard {
   heading: string;
   description: string;
   image: Iimage | string;
+}
+
+export interface ICTASection extends IContentSection {
+  item1: ICTAItem;
+  item2: ICTAItem;
+}
+
+export interface ICTAItem {
+  textColor: string;
+  backgroundColor: string;
+  image: Iimage | string;
+  link: string;
+  linkText: string;
+  text: string;
 }

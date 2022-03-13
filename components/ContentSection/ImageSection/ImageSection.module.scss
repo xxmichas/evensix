@@ -1,0 +1,17 @@
+.section {
+  user-select: none;
+  width: 100%;
+  position: relative;
+  margin-bottom: 80px;
+
+  > span {
+    position: unset !important;
+  }
+}
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}

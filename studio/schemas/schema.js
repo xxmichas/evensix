@@ -13,6 +13,8 @@ import card from "./objects/card";
 import contentSectionCards from "./objects/contentSectionCards";
 import contentSectionText from "./objects/contentSectionText";
 import contentSectionImage from "./objects/contentSectionImage";
+import CTASection from "./objects/CTASection";
+import CTAItem from "./objects/CTAItem";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -26,6 +28,8 @@ export default createSchema({
     contentSectionCards,
     contentSectionText,
     contentSectionImage,
+    CTASection,
+    CTAItem,
     landingPage,
     navLink,
     hero,

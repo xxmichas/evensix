@@ -1,11 +1,11 @@
 .hero {
   position: relative;
   background-color: $primary;
-  padding-top: 90px;
+  padding-top: 75px;
   margin-bottom: 80px;
 
   @include desktop {
-    padding: 100px 50px 0;
+    padding: 80px 50px 0;
   }
 
   &::before {
@@ -25,7 +25,7 @@
   margin-bottom: 75px;
 
   @include desktop {
-    max-width: 485px;
+    max-width: 510px;
   }
 }
 

@@ -1,0 +1,71 @@
+.wrapper {
+  user-select: none;
+  width: 200%;
+  position: relative;
+
+  @include desktop {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  > span {
+    position: unset !important;
+  }
+}
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+
+  @include desktop {
+    max-height: 420px !important;
+  }
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &.left {
+    flex-direction: column-reverse;
+
+    .wrapper {
+      align-self: flex-end;
+    }
+
+    .background {
+      @include desktop {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    .desc {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.background {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+
+  @include desktop {
+    left: 0;
+    transform: none;
+  }
+}
+
+.desc {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
