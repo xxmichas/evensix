@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { IContentSection, ICTASection, IHeroSection, LandingPageContent } from "../../types/types";
 import ContentSection from "../ContentSection/ContentSection";
 import CTASection from "../CTASection/CTASection";
@@ -33,4 +34,4 @@ const LandingPage = ({ content }: { content: LandingPageContent[] }) => {
   );
 };
 
-export default LandingPage;
+export default memo(LandingPage);

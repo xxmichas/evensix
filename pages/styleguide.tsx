@@ -29,13 +29,5 @@ const Styleguide: NextPage = () => {
 export default Styleguide;
 
 export const getStaticProps: GetStaticProps = async () => {
-  if (process.env.NODE_ENV === "production") {
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/",
-      },
-    };
-  }
-  return { props: {} };
+  return { props: {}, notFound: process.env.NODE_ENV === "production" };
 };
